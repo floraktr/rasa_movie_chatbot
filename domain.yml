@@ -1,0 +1,63 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_movie_suggestions
+  - ask_trending_movies
+  - ask_movie_details
+  - affirm
+  - bot_challenge
+  - nlu_fallback
+
+entities:
+  - genre
+  - movie_title
+
+slots:
+  genre:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: genre
+  movie_title:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: movie_title
+
+responses:
+  utter_greet:
+    - text: "Hi! I'm your movie assistant. I can suggest 5 movies by genre, show trending titles, or give you details like plot and duration. How can I help?"
+
+  utter_goodbye:
+    - text: "Goodbye! Enjoy your movie night."
+
+  utter_ask_genre:
+    - text: "Sure! Which genre are you interested in? (e.g., comedy, action, drama, sci-fi)"
+
+  utter_happy:
+    - text: "Great! I'm glad I could help you."
+
+  utter_did_that_help:
+    - text: "Did that information help you?"
+
+  utter_iamabot:
+    - text: "I am a movie assistant bot, powered by Rasa!"
+
+  utter_default:
+    - text: "I'm sorry, I didn't quite get that. I can help with suggestions, trending titles, or movie details."
+
+actions:
+  - action_suggest_movies_by_genre
+  - action_get_trending_movies
+  - action_movie_details_from_dataset
+  - utter_greet
+  - utter_goodbye
+  - utter_ask_genre
+  - utter_happy
+  - utter_did_that_help
+  - utter_iamabot
+  - utter_default

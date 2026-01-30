@@ -1,0 +1,44 @@
+version: "3.1"
+
+stories:
+
+- story: happy path genre suggestions
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_movie_suggestions
+  - action: action_suggest_movies_by_genre
+  - intent: affirm
+  - action: utter_happy
+
+- story: trending movies path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_trending_movies
+  - action: action_get_trending_movies
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: movie details path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_movie_details
+  - action: action_movie_details_from_dataset
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: direct movie details query
+  steps:
+  - intent: ask_movie_details
+  - action: action_movie_details_from_dataset
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: bot challenge path
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

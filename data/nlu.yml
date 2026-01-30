@@ -1,0 +1,89 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+    - greetings
+    - hi there
+    - good morning
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - catch you later
+    - bye bye
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that helped
+    - correct
+    - yeah
+    - perfectly
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a robot?
+    - who built you?
+
+- intent: ask_movie_suggestions
+  examples: |
+    - suggest a [comedy](genre)
+    - recommend an [action](genre) movie
+    - I want to watch a [drama](genre)
+    - give me some [horror](genre) movies
+    - find me a [sci-fi](genre) film
+    - can you suggest a [thriller](genre)?
+    - show me [drama](genre) films
+
+- intent: ask_trending_movies
+  examples: |
+    - what is popular right now?
+    - trending movies today
+    - show me trending films
+    - what's popular?
+    - current trending titles
+
+- intent: ask_movie_details
+  examples: |
+    - tell me about [Inception](movie_title)
+    - how long is [The Irishman](movie_title)?
+    - what is the plot of [Matilda](movie_title)?
+    - [The Dark Knight](movie_title) duration
+    - give me the story of [Roma](movie_title)
+    - info for [Glass Onion](movie_title)
+    - [The Sea Beast](movie_title) plot
+    - how much time is [Inception](movie_title)?
+    - summary of [Enola Holmes](movie_title)
+    - runtime of [Don't Look Up](movie_title)
+    - [Army of the Dead](movie_title) length
+    - what happens in [United 93](movie_title)?
+
+- lookup: movie_title
+  examples: |
+    - Norm of the North: King Sized Adventure
+    - United 93
+    - The Sea Beast
+    - Inception
+    - The Irishman
+    - Matilda
+    - The Dark Knight
+    - Project X
+    - The Power of the Dog
+    - Don't Look Up
+    - Army of the Dead
+    - Extraction
+    - The Dig
+    - Mank
+    - Roma
+    - Glass Onion
+    - Enola Holmes

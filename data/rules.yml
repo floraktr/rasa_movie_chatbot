@@ -1,0 +1,28 @@
+version: "3.1"
+
+rules:
+
+- rule: Say hello anytime the user greets us
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Provide movie suggestions based on genre (Scenario 1)
+  steps:
+  - intent: ask_movie_suggestions
+  - action: action_suggest_movies_by_genre
+
+- rule: Provide trending movies from the TMDB API (Scenario 2)
+  steps:
+  - intent: ask_trending_movies
+  - action: action_get_trending_movies
+
+- rule: Handle fallbacks when the bot is unsure
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default
